@@ -1,18 +1,21 @@
-var money,
-    time;
-
-var expName = prompt ("Введите обязательную статью расходов в этом месяце");
-var expData = +prompt ("Во сколько обойдется?");
+var money = prompt("Ваш бюджет на месяц?", ''),
+    time = prompt("Введите дату в формате YYYY-MM-DD", '');
 
 var appData = {
   budget : money,
   timeData : time,
-  expenses : {expName1 : expName, expData1 : expData},
-  optionalExpenses : "",
+  expenses : {},
+  optionalExpenses : {},
   income : [],
   savings : false
 };
 
-//alert(expData/30);
-console.log(appData.expenses.expName1);
-console.log(appData.expenses.expData1/30);
+var a1 = prompt ("Введите обязательную статью расходов в этом месяце");
+var a2 = prompt ("Во сколько обойдется?");
+var a3 = prompt ("Введите обязательную статью расходов в этом месяце");
+var a4 = prompt ("Во сколько обойдется?");
+
+appData.expenses.a1 = a2;
+appData.expenses.a3 = a4;
+
+alert(money/30);
