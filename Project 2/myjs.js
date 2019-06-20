@@ -9,10 +9,10 @@
 -- Операторы условия, возвращают true Или false
 */
 
-var money = prompt("Ваш бюджет на месяц?", ''),
+let money = +prompt("Ваш бюджет на месяц?", ''),
     time = prompt("Введите дату в формате YYYY-MM-DD", '');
 
-var appData = {
+let appData = {
   budget : money,
   timeData : time,
   expenses : {},
@@ -21,12 +21,26 @@ var appData = {
   savings : false
 };
 
-var a1 = prompt ("Введите обязательную статью расходов в этом месяце", '');
-var a2 = prompt ("Во сколько обойдется?", '');
-var a3 = prompt ("Введите обязательную статью расходов в этом месяце", '');
-var a4 = prompt ("Во сколько обойдется?", '');
+for (let i = 0; i < 2; i++) {
+    let a = prompt ("Введите обязательную статью расходов в этом месяце" + i, ''),
+        b = prompt ("Во сколько обойдется?" + i, '');
+        
+        console.log(typeof(a));
+        console.log(typeof(b));
+    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null
+    && a != '' && b != '' && a.length < 50) {
+      console.log("done" + i);
+      appData.expenses[a] = b;
+    } else {
+      do {
+        a = prompt ("Введите обязательную статью расходов в этом месяце" + i+1, '');
+        b = prompt ("Во сколько обойдется?" + i+1, '');
+      }
+      while(!a && !b);
+      appData.expenses[a] = b;
+    }
+}
 
-appData.expenses.a1 = a2;
-appData.expenses.a3 = a4;
+appData.moneyPerDay = appData.budget / 30;
 
-alert(appData.budget / 30);
+alert("Дневной бюджет: " + appData.moneyPerDay);
