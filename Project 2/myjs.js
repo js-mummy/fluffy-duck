@@ -9,6 +9,7 @@
 -- Операторы условия, возвращают true Или false
 */
 
+
 var p = function detectDayBudget() {
 
   let money = +prompt("Ваш бюджет на месяц?", ''),
@@ -27,8 +28,6 @@ var p = function detectDayBudget() {
     let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
       b = prompt("Во сколько обойдется?", '');
 
-    console.log(typeof (a));
-    console.log(typeof (b));
     if ((typeof (a)) === 'string' && (typeof (a)) != null && (typeof (b)) != null &&
       a != '' && b != '' && a.length < 50) {
 
@@ -46,7 +45,39 @@ var p = function detectDayBudget() {
   appData.moneyPerDay = appData.budget / 30;
 
   alert("Дневной бюджет: " + appData.moneyPerDay);
-
+  
+  return appData.moneyPerDay;
 };
 
-p();
+
+function detectLevel() {
+  var moneyPerDayLevel = p();
+
+  console.log(moneyPerDayLevel);
+
+  if (moneyPerDayLevel < 100) {
+    console.log("Мин уровень достатка");
+  } else if (moneyPerDayLevel > 100 && moneyPerDayLevel < 2000) {
+    console.log("Средний уровень достатка");
+  } else if (moneyPerDayLevel > 2000) {
+    console.log("Высокий уровень достатка");
+  } else {
+    console.log("Ошибка");
+  }
+}
+
+detectLevel();
+
+function chooseOptExpenses() {
+  let optionalExpenses = {};
+
+  for (let i = 1; i < 4; i++) {
+    let c = prompt("Статья необязательных расходов №" + i +"?", '');
+    optionalExpenses[i] = c;
+  }
+  console.log(optionalExpenses);
+
+  return optionalExpenses;
+}
+
+// chooseOptExpenses();
