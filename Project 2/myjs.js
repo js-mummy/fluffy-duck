@@ -9,12 +9,10 @@
 -- Операторы условия, возвращают true Или false
 */
 
-
-
 var p = function detectDayBudget() {
 
-  var money = +prompt("Ваш бюджет на месяц?", ''),
-  time = prompt("Введите дату в формате YYYY-MM-DD", '');
+  let money = +prompt("Ваш бюджет на месяц?", ''),
+    time = prompt("Введите дату в формате YYYY-MM-DD", '');
 
   let appData = {
     budget: money,
@@ -26,19 +24,19 @@ var p = function detectDayBudget() {
   };
 
   for (let i = 0; i < 2; i++) {
-    let a = prompt("Введите обязательную статью расходов в этом месяце" + i, ''),
-      b = prompt("Во сколько обойдется?" + i, '');
+    let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
+      b = prompt("Во сколько обойдется?", '');
 
     console.log(typeof (a));
     console.log(typeof (b));
     if ((typeof (a)) === 'string' && (typeof (a)) != null && (typeof (b)) != null &&
       a != '' && b != '' && a.length < 50) {
-      console.log("done" + i);
+
       appData.expenses[a] = b;
     } else {
       do {
-        a = prompt("Введите обязательную статью расходов в этом месяце" + i + 1, '');
-        b = prompt("Во сколько обойдется?" + i + 1, '');
+        a = prompt("Неверное значение. Введите обязательную статью расходов в этом месяце", '');
+        b = prompt("Неверное значение. Во сколько обойдется?", '');
       }
       while (!a && !b);
       appData.expenses[a] = b;
@@ -49,7 +47,6 @@ var p = function detectDayBudget() {
 
   alert("Дневной бюджет: " + appData.moneyPerDay);
 
-  console.log(appData);
 };
 
 p();
