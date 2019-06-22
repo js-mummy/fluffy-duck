@@ -10,7 +10,7 @@
 */
 
 
-var p = function detectDayBudget() {
+function detectDayBudget() {
 
   let money = +prompt("Ваш бюджет на месяц?", ''),
     time = prompt("Введите дату в формате YYYY-MM-DD", '');
@@ -26,7 +26,7 @@ var p = function detectDayBudget() {
 
   for (let i = 0; i < 2; i++) {
     let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
-      b = prompt("Во сколько обойдется?", '');
+        b = prompt("Во сколько обойдется?", '');
 
     if ((typeof (a)) === 'string' && (typeof (a)) != null && (typeof (b)) != null &&
       a != '' && b != '' && a.length < 50) {
@@ -45,13 +45,14 @@ var p = function detectDayBudget() {
   appData.moneyPerDay = appData.budget / 30;
 
   alert("Дневной бюджет: " + appData.moneyPerDay);
-  
+
   return appData.moneyPerDay;
 };
 
+let p = detectDayBudget();
 
 function detectLevel() {
-  var moneyPerDayLevel = p();
+  var moneyPerDayLevel = p;
 
   console.log(moneyPerDayLevel);
 
@@ -72,12 +73,10 @@ function chooseOptExpenses() {
   let optionalExpenses = {};
 
   for (let i = 1; i < 4; i++) {
-    let c = prompt("Статья необязательных расходов №" + i +"?", '');
+    let c = prompt("Статья необязательных расходов №" + i + "?", '');
     optionalExpenses[i] = c;
   }
   console.log(optionalExpenses);
 
   return optionalExpenses;
 }
-
-// chooseOptExpenses();
