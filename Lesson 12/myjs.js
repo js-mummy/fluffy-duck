@@ -1,11 +1,8 @@
 let testArray = [1, 20, 'Test', true];
-let out = document.getElementById('out');
-let str = '';
+testArray[6] = 18;
 
-for (let i = 0; i < testArray.length; i++) {
-  if(i !== undefined) {
-    str += testArray[i] + '</br>';
-  }
-}
+let d = testArray.map(function(x){
+  return x*5;
+})
 
-out.innerHTML = str;
+console.log(d);
