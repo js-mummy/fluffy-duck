@@ -47,7 +47,7 @@ function detectDayBudget() {
   alert("Дневной бюджет: " + appData.moneyPerDay);
 
   return appData.moneyPerDay;
-};
+}
 
 let p = detectDayBudget();
 
@@ -80,3 +80,9 @@ function chooseOptExpenses() {
 
   return optionalExpenses;
 }
+
+var str = '';
+for (var i = 1034; i <= 1113; i++) {
+  str += String.fromCharCode(i);
+}
+console.log( str );
