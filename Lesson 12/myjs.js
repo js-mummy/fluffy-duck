@@ -1,3 +1,4 @@
+
 // Map array
 /*let testArray = [1, 20, 'Test', true];
 testArray[6] = 18;
@@ -176,10 +177,46 @@ arr2[0] = 5;
 alert( arr[0] );1
 alert( arr2[0] );5 */
 
-var arr = [1, 2, 3];
+var arr3 = [1, 2, 3];
 
-var arr2 = arr;
+var arr2 = arr3;
 arr2[0] = 5;
 
-console.log( arr[0] );
+console.log( arr3[0] );
 console.log( arr2[0] );
+
+/*Поиск в массиве
+важность: 3
+Создайте функцию find(arr, value), которая ищет в массиве
+arr значение value и возвращает его номер, если найдено, или -1, если не найдено.
+
+Например:
+
+arr = ["test", 2, 1.5, false];
+
+find(arr, "test"); // 0
+find(arr, 2); // 1
+find(arr, 1.5); // 2
+
+find(arr, 0); // -1 */
+
+
+let arrmy = ['test', 2, 1.5, false];
+
+function find(targetArray, targetValue) {
+  targetArray = arrmy;
+  for (let i = 0; i < targetArray.length; i++) {
+    if (targetArray[i] === targetValue) {
+      console.log(i); break;
+    } else {
+      if ((targetArray.length - 1) == i && targetArray[i] !== targetValue) {
+        console.log(-1);
+      }
+    }
+  }
+}
+
+find(arrmy, 'test'); // 0
+find(arrmy, 2); // 1
+find(arrmy, 1.5); // 2
+find(arrmy, 0); // -1
