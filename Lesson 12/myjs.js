@@ -120,3 +120,19 @@ console.log('--------');
 style.unshift('Rap', 'Reggae');
 console.log(style);
 console.log('--------');
+
+
+/*Получить случайное значение из массива
+важность: 3
+Напишите код для вывода alert случайного значения из массива:
+
+var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+P.S. Код для генерации случайного целого от min to max включительно:
+
+var rand = min + Math.floor(Math.random() * (max + 1 - min)); */
+
+let arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+let min = 0;
+let max = arr.length;
+let rand = min + Math.floor(Math.random() * (max + 1 - min));
+console.log(arr[rand]);
