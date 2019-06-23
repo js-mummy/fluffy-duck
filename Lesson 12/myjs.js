@@ -239,13 +239,10 @@ var filtered = filterRange(arr, 3, 5);
 let arr10 = [5, 4, 3, 8, 0];
 let arrNew = [];
 
-function filterRange(arrForFunction, minNumber, maxNumber) {
-  if (arrForFunction.length < maxNumber || minNumber < 0) {
-    return "Error: Array length is: " + arrForFunction.length + ", but you put: " + maxNumber;
-  }
-  for (let i = 0; i < arrForFunction.length; i++) {
-    if (minNumber <= arrForFunction[i] && arrForFunction[i] <= maxNumber) {
-      arrNew.push(arrForFunction[i]);
+function filterRange(inputArray, minNumber, maxNumber) {
+  for (let i = 0; i < inputArray.length; i++) {
+    if (minNumber <= inputArray[i] && inputArray[i] <= maxNumber) {
+      arrNew.push(inputArray[i]);
     } else {
       continue;
     }
@@ -253,5 +250,5 @@ function filterRange(arrForFunction, minNumber, maxNumber) {
   return arrNew;
 }
 
-let filtered = filterRange(arr10, 3, 6);
+let filtered = filterRange(arr10, 5, 10);
 console.log(filtered);
