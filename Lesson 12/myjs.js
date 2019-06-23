@@ -136,3 +136,30 @@ let min = 0;
 let max = arr.length;
 let rand = min + Math.floor(Math.random() * (max + 1 - min));
 console.log(arr[rand]);
+
+/*Создайте калькулятор для введённых значений
+важность: 4
+Напишите код, который:
+
+Запрашивает по очереди значения при помощи prompt и сохраняет их в массиве.
+Заканчивает ввод, как только посетитель введёт пустую строку, не число или
+нажмёт «Отмена».
+При этом ноль 0 не должен заканчивать ввод, это разрешённое число.
+Выводит сумму всех значений массива */
+
+let arr1 = [];
+let s5 = 0;
+
+for (let i = 0; i < 3; i++) {
+  let a = prompt('Enter number', '');
+  console.log(typeof(a));
+    if (!isNaN(a) && a !== null && a !== '') {
+      arr1.push(+a);
+      s5 += arr1[i];
+    } else {
+      break;
+    }
+}
+
+console.log(arr1);
+console.log(s5);
