@@ -1,4 +1,3 @@
-
 // Map array
 /*let testArray = [1, 20, 'Test', true];
 testArray[6] = 18;
@@ -41,20 +40,20 @@ console.log(typeof(arr[4]));*/
 
 
 var matrix = [
-   [1, 2, 3, 0, 0],
-   [4, 5, 6, 0, 0],
-   [7, 8, 9, 0, 0],
-   [10, 11, 12, 0, 0]
- ];
- console.log(matrix[0].length);
- console.log(matrix[0].length);
+  [1, 2, 3, 0, 0],
+  [4, 5, 6, 0, 0],
+  [7, 8, 9, 0, 0],
+  [10, 11, 12, 0, 0]
+];
+console.log(matrix[0].length);
+console.log(matrix[0].length);
 
- let s = 0;
+let s = 0;
 for (let i = 0; i < matrix.length; i++) {
-    for (let k = 0; k < matrix[i].length; k++) {
-      s += matrix[i][k];
-    }
-    //console.log(s);
+  for (let k = 0; k < matrix[i].length; k++) {
+    s += matrix[i][k];
+  }
+  //console.log(s);
 }
 
 console.log(s);
@@ -67,7 +66,7 @@ console.log(s);
 
 Напишите код для получения последнего элемента goods.*/
 
-let goods = [1,4,5,6,78,3,3,6,7,4];
+let goods = [1, 4, 5, 6, 78, 3, 3, 6, 7, 4];
 let s1 = goods.length - 1;
 console.log(s1);
 console.log(goods[s1]);
@@ -78,7 +77,7 @@ console.log(goods[s1]);
 
 У нас есть массив goods. Напишите код для добавления в его конец значения «Компьютер».*/
 
-let goods1 = [1,4,5,6,78,3,3,6,7,4];
+let goods1 = [1, 4, 5, 6, 78, 3, 3, 6, 7, 4];
 goods1.push('Компьютер');
 console.log(goods1);
 
@@ -153,13 +152,13 @@ let s5 = 0;
 
 for (let i = 0; i < 3; i++) {
   let a = prompt('Enter number', '');
-  console.log(typeof(a));
-    if (!isNaN(a) && a !== null && a !== '') {
-      arr1.push(+a);
-      s5 += arr1[i];
-    } else {
-      break;
-    }
+  console.log(typeof (a));
+  if (!isNaN(a) && a !== null && a !== '') {
+    arr1.push(+a);
+    s5 += arr1[i];
+  } else {
+    break;
+  }
 }
 
 console.log(arr1);
@@ -182,8 +181,8 @@ var arr3 = [1, 2, 3];
 var arr2 = arr3;
 arr2[0] = 5;
 
-console.log( arr3[0] );
-console.log( arr2[0] );
+console.log(arr3[0]);
+console.log(arr2[0]);
 
 /*Поиск в массиве
 важность: 3
@@ -207,7 +206,8 @@ function find(targetArray, targetValue) {
   targetArray = arrmy;
   for (let i = 0; i < targetArray.length; i++) {
     if (targetArray[i] === targetValue) {
-      console.log(i); break;
+      console.log(i);
+      break;
     } else {
       if ((targetArray.length - 1) == i && targetArray[i] !== targetValue) {
         console.log(-1);
@@ -220,3 +220,38 @@ find(arrmy, 'test'); // 0
 find(arrmy, 2); // 1
 find(arrmy, 1.5); // 2
 find(arrmy, 0); // -1
+
+/* Фильтр диапазона
+важность: 3
+Создайте функцию filterRange(arr, a, b), которая принимает массив чисел arr и
+возвращает новый массив, который содержит только числа из arr
+из диапазона от a до b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+Функция не должна менять arr.
+
+Пример работы:
+
+var arr = [5, 4, 3, 8, 0];
+
+var filtered = filterRange(arr, 3, 5);
+// теперь filtered = [5, 4, 3]
+// arr не изменился */
+
+let arr10 = [5, 4, 3, 8, 0];
+let arrNew = [];
+
+function filterRange(arrForFunction, minNumber, maxNumber) {
+  if (arrForFunction.length < maxNumber || minNumber < 0) {
+    return "Error: Array length is: " + arrForFunction.length + ", but you put: " + maxNumber;
+  }
+  for (let i = 0; i < arrForFunction.length; i++) {
+    if (minNumber <= arrForFunction[i] && arrForFunction[i] <= maxNumber) {
+      arrNew.push(arrForFunction[i]);
+    } else {
+      continue;
+    }
+  }
+  return arrNew;
+}
+
+let filtered = filterRange(arr10, 3, 6);
+console.log(filtered);
