@@ -163,3 +163,23 @@ for (let i = 0; i < 3; i++) {
 
 console.log(arr1);
 console.log(s5);
+
+/*Чему равен элемент массива?
+важность: 3
+Что выведет этот код?
+
+var arr = [1, 2, 3];
+
+var arr2 = arr;
+arr2[0] = 5;
+
+alert( arr[0] );1
+alert( arr2[0] );5 */
+
+var arr = [1, 2, 3];
+
+var arr2 = arr;
+arr2[0] = 5;
+
+console.log( arr[0] );
+console.log( arr2[0] );
